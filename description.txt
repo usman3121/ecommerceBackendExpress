@@ -1,0 +1,15 @@
+1. `users` Table:
+   - **One-to-One** with `carts`: Each user has one shopping cart.
+   - **One-to-Many** with other tables (e.g., `orders`, if you choose to implement order history).
+
+2. `categories` Table:
+   - **Many-to-Many** with `products`: A product can belong to multiple categories, and a category can have multiple products. You can create an intermediary table to manage this many-to-many relationship.
+
+3. `products` Table:
+   - **Many-to-One** with `categories`: Each product belongs to one category.
+   - **Many-to-Many** with `carts`: A product can be added to multiple user carts, and a cart can have multiple products. You can create an intermediary table to manage this many-to-many relationship.
+
+4. `carts` Table:
+   - **One-to-One** with `users`: Each user has one shopping cart.
+   - **Many-to-Many** with `products`: A cart can have multiple products, and a product can be in multiple user carts. You can create an intermediary table to manage this many-to-many relationship.
+   - **Many-to-One** with `orders`: If you choose to implement order history, a cart can be converted into one or more orders.
